@@ -1,0 +1,65 @@
+<div class="row-fluid">
+  <div class="col-xs-12">
+      <nav class="navbar navbar-default header-top">
+          <div class="container">
+          <div class="row">
+              <div class="browser-offline-desktop visible-lg" align="center" ng-if="!onlineStatus.onLine">
+                  Reconnecting in 9 Sec...
+              </div>
+              <div class="browser-offline-mobile hidden-lg" align="center" ng-if="!onlineStatus.onLine">
+                  Reconnecting in 9 Sec...
+              </div>
+              <div class="col-xs-3">
+                <a ui-sref="home" style="text-decoration:none;"><span style="font-size: 35px;color: #0a9dc7;">Lo</span><span style="font-size: 35px;color: purple;">Go</span></a>
+              </div>
+              <div class="col-xs-6 hidden-xs">
+
+                  <md-input-container class="md-icon-float" >
+                    <label>Search Contacts?</label>
+                    <md-icon md-svg-src="img/icons/ic_search_black_24px.svg" class="name"></md-icon>
+                    <input ng-model="SearchItem" type="text" ng-focus="SearchItemFocus=true" ng-blur="SearchItemFocus=false" ng-keyup="searchItem()">
+                  </md-input-container>
+                  <div class="list-group header-search-item" ng-if="SearchItem.length>0" ng-keydown="keyDown($event)">
+                    <a class="list-group-item search-item" ng-repeat="matchItem in matchItems"  ng-class="isSelected(SearchItem)" ng-hover="selectItem(SearchItem)" ng-click="SelectedUserProfile(matchItem._id)">
+                        <div class="row">
+                            <div class="col-xs-1">
+                                <img src="img/user/{{matchItem.icon?matchItem.icon:'no_icon.png'}}" class="img-circle" style="width: 40px;height: 40px;">
+                            </div>
+                            <div class="col-xs-11">
+                                <b>{{matchItem.name}}</b><br>
+                                <small>{{matchItem.email}}</small>
+                            </div>
+                        </div>
+                    </a>
+                  </div>
+              </div>
+              <div class="col-xs-3">
+                  <div class="row"  ng-if="currentUser">
+                      <div class="col-xs-12">
+                          <div class="row user-profile-menu pull-right" ng-mouseover="showUserProfileMenu=true"  ng-mouseleave="showUserProfileMenu=false">
+                              <a ui-sref="Profile" style="color:#000;text-decoration:none;"> 
+                              <div class="col-md-12">
+                                <i class="fa fa-user user-profile-menu-icon"></i> &nbsp;&nbsp; <span>{{currentUser.name}}</span><br>
+                                 <div class="list-group user-profile-menu-item" ng-show="showUserProfileMenu">
+                                    <a ui-sref="Profile" class="list-group-item search-item">View Profile</a>
+                                    <a ui-sref="Group" class="list-group-item search-item">Manage Group</a>
+                                    <a ui-sref="Chat" class="list-group-item search-item">Go To Chat Room</a>
+                                    <a href="javascript:void(0)" ng-click="Logout()" class="list-group-item search-item">Logout</a>
+                                  </div>
+                              </div>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row pull-right"  ng-if="!currentUser">
+                      <div class="col-xs-12">
+                          <div  ng-if="!currentUser" style="padding-top: 4%;">
+                              <i class="fa fa-user user-profile-menu-icon-disable"></i> &nbsp;&nbsp;<a ui-sref="Login" style="text-decoration:none;color:#828282;">LOGIN</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a ui-sref="Signup" style="text-decoration:none;color:#828282;">SIGNUP</a>
+                          </div>
+                      </div>
+                  </div>
+          </div>
+          </div>
+      </nav>
+  </div>
+</div>

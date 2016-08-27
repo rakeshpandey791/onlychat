@@ -1,0 +1,51 @@
+<md-dialog  ng-cloak style="min-width: 43%;">
+  <form>
+  <md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+    	<div class="row" style="width:100%;">
+    		<div class="col-md-11"><h2>Users in {{groupName}} </h2></div>
+    		<div class="col-md-1"><a href="javascript:void(0)" class="pull-right" ng-click="CloseModel()">&times;</a></div>
+    	</div>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+    <div class="md-dialog-content">
+      <p>
+        <ul class="group-list">
+          <li  ng-repeat="people in goupPeople">
+            <img alt="Independence Day" src="img/user/{{people.icon?people.icon:'no_icon.png'}}" class="img-circle"/>
+            <div class="info">
+              <h2 class="title">{{people.name}}</h2>
+              <p></p>
+            </div>
+            <div class="group-people" style="width:250Px;" ng-if="adminUserId!=people._id && adminUserId==user._id">
+              <ul>
+                <li style="width:90%;">
+                  <div class="row">
+                    <div class="col-md-10" style="padding-top: 2%;">
+                       <md-button class="md-raised md-warn" ng-click="addPeopleInGroup()">Remove from group</md-button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="group-people" style="width:250Px;" ng-if="adminUserId!=people._id && adminUserId!=user._id && people._id==user._id">
+              <ul>
+                <li style="width:90%;">
+                  <div class="row">
+                    <div class="col-md-10" style="padding-top: 2%;">
+                       <md-button class="md-raised md-warn" ng-click="addPeopleInGroup()">Leave group</md-button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </p>
+      
+    </div>
+  </md-dialog-content>
+  </form>
+</md-dialog>

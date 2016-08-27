@@ -1,0 +1,205 @@
+<website-header></website-header>
+<div class="ps-relative">
+<div class="container-top-background"></div>
+<div class="container">
+<div class="row" style="padding-top:10%;">
+	  	<div class="col-xs-12">
+	    	<md-content class="md-padding">
+	    	<md-tabs md-dynamic-height md-border-bottom>
+		      
+		      <md-tab label="Group Chat">
+		        <md-content class="md-padding" style="min-height:750px;max-height:800px;">
+		          <p>
+		          	<div class="col-xs-3">
+		          		<div class="row">
+		          			<div class="group-list-container">
+		          				<div class="row-fluid" ng-repeat="group in groupList">
+		          					<a href="" class="user-summary" ng-class="{'active':group._id==selectedGroupDetails._id}" ng-click="SelectedUserGroup(group)">
+		          					<md-tooltip md-direction="right" ng-if="group.description">
+								        {{group.description}}
+								      </md-tooltip>
+		          						<div class="col-xs-3">
+		          							<img src="img/user/{{group.icon?group.icon:'no_icon.png'}}" class="img-circle">
+		          							<i class="fa fa-bell notify-icon pull-right" ng-if="notifyNewMessageArr.indexOf(group._id)> -1"></i>
+		          						</div>
+		          						<div class="col-xs-8">
+		          							{{group.name}}
+		          							
+		          							<i class="fa fa-arrow-right arrow-icon pull-right" ng-if="group._id==selectedGroupDetails._id"></i>
+		          						</div>
+		          					</a>
+		          				</div>
+		          				
+		          			</div>
+		          		</div>
+		          	</div>
+		          	<div class="col-xs-9">
+		          		<div class="row selected-user">
+		          			<div class="col-xs-1">
+		          				<img src="img/user/{{selectedGroupDetails.icon?selectedGroupDetails.icon:'no_icon.png'}}" class="img-circle">
+		          			</div>
+		          			<div class="col-xs-8">
+		          				<h4>{{selectedGroupDetails.name}}</h4>
+		          			</div>
+		          		</div>
+		          		<div class="row">
+		          			<div id="messages" class="messages" scroll-glue>
+					                <ul>
+					                    <li ng-repeat="message in groupMessage">
+					                    	
+					                        <chat-message message="{{message.message}}" user-id="{{message.userId}}" created-on="{{message.createdOn}}"></chat-message>
+					                    </li> 
+					                </ul>
+					                <div id="groupChatBottom"></div>
+					                <div class="clear"></div>
+					        </div>
+		          		</div>
+		          		<div class="row" style="min-height:30px;">
+		          			<div class="col-xs-12">
+		          				<span class="text-success" ng-if="userTypingUser && userTypingUser!=user.name">{{userTypingUser}} is typing...</span>
+		          			</div>
+		          		</div>
+		          		<div class="row">
+		          			<div class="col-xs-12">
+		          				<md-input-container flex>
+						          <label>TYPE MESSAGE AND PRESS ENTER TO SEND</label>
+						          <input type="text" ng-model="userGroup.message" ng-keyup="addNewGroupMessage($event)" ng-focus="groupInputFocus=true" ng-blur="groupInputFocus=false"><i class="fa fa-paper-plane" style="position: absolute;right: 0px;top: 41px;"></i>
+						        </md-input-container>
+		          			</div>
+		          		</div>
+		          	</div>
+		          		
+		          </p>
+		        </md-content>
+		      </md-tab>
+		      <md-tab label="Private Chat">
+		        <md-content class="md-padding" style="min-height:750px;max-height:800px;">
+		          <p>
+		          	<div class="col-xs-3">
+		          		<div class="row">
+		          			<div class="group-list-container">
+		          				<div class="row-fluid" ng-repeat="chatUser in chatUserList">
+		          					<a href="" class="user-summary active"  ng-click="createChannel(chatUser)">
+		          						<div class="col-xs-3">
+		          							<img src="img/user/{{chatUser.icon?chatUser.icon:'rakesh.jpg'}}" class="img-circle">
+		          						</div>
+		          						<div class="col-xs-8">
+		          							{{chatUser.name}}<br>
+		          							<label class="label label-success">Active</label>
+		          						</div>
+		          					</a>
+		          				</div>
+		          				
+		          			</div>
+		          		</div>
+		          	</div>
+		          	<div class="col-xs-9">
+		          		<div class="row selected-user">
+		          			<div class="col-xs-1">
+		          				<img src="img/user/jitender.jpg" class="img-circle">
+		          			</div>
+		          			<div class="col-xs-8">
+		          				<h4>JItender Singh</h4>
+		          			</div>
+		          		</div>
+		          		<div class="row">
+		          			<div id="messages" class="messages"  scroll-glue>
+					                <ul>
+					                    <li>
+					                        <span class="left">Hello</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Are you there?</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="right">Yes I am here</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Thanks for accepting my friend request.Thanks for accepting my friend request.Thanks for accepting my friend request</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="right">You Welcome</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Bye</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Hello</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Are you there?</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="right">Yes I am here</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Thanks for accepting my friend request.Thanks for accepting my friend request.Thanks for accepting my friend request</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="right">You Welcome</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Bye</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Hello</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Are you there?</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="right">Yes I am here</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Thanks for accepting my friend request.Thanks for accepting my friend request.Thanks for accepting my friend request</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="right">You Welcome</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                    <li>
+					                        <span class="left">Bye</span>
+					                        <div class="clear"></div>
+					                    </li> 
+					                </ul>
+					                <div id="privateChatBottom"></div>
+					                <div class="clear"></div>
+					        </div>
+		          		</div><br>
+		          		<div class="row">
+		          			<div class="col-md-12">
+		          				<md-input-container flex>
+						          <label>TYPE MESSAGE AND PRESS ENTER TO SEND</label>
+						          <input type="text" ng-model="userchat.message"><i class="fa fa-paper-plane" style="position: absolute;right: 0px;top: 41px;"></i>
+						        </md-input-container>
+		          			</div>
+		          		</div>
+		          	</div>
+		          		
+		          </p>
+		        </md-content>
+		      </md-tab>
+    </md-tabs>
+
+			  </md-content>
+	        </div>
+	        
+        </div>
+         </div>
+         </div>

@@ -1,0 +1,184 @@
+<website-header></website-header>
+<div class="container">
+<div class="row" style="padding-top:10%;">
+	  	<div class="col-md-3" style="margin-top: -25px;">
+      <md-content class="md-padding">
+	  		<ul class="list-group">
+	  		<li class="list-group-item active">Shop By Category</li>
+        <li class="list-group-item ek-menu-item" ng-repeat="menu in wesiteMenu" ng-init="showSubCat=false" ng-mouseenter="showSubCat=true" ng-mouseleave="showSubCat=false">{{menu.catTitle}} <span class="pull-right ek-menu-arrow" ng-show="showSubCat"> <i class="fa fa-arrow-circle-right"></i> </span>
+          <div class="row ek-menu-details" ng-show="showSubCat">
+              <div class="col-md-12">
+                  <h1>{{menu.catDetailHeading}}</h1>
+              </div>
+          </div>
+        </li>
+        
+			  <a ui-sref="Categories" style="text-decoration:none;color: #000"><li class="list-group-item ek-menu-item">See All Categories</li></a>
+
+			</ul>
+      </md-content>
+	  	</div>
+	    <div class="col-md-9" style="margin-top: 30px;">
+	    	
+	    	<md-content class="md-padding">
+    <md-tabs md-border-bottom md-align-tabs="bottom"  style="border:1px solid #DEEAEE;padding: 2% 2% 5% 2%;min-height: 416px;max-height: 416px;">
+      <md-tab>
+        <md-tab-label>Top Deals</md-tab-label>
+        <md-tab-body>
+          <img src="img/offers/top-deal.jpg" style="width: 100%;height: 100%;">
+        </md-tab-body>
+      </md-tab>
+      <md-tab ng-disabled="data.secondLocked">
+        <md-tab-label>Sport</md-tab-label>
+        <md-tab-body>
+          <img src="img/offers/sports.jpg" style="width: 100%;height: 100%;">
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Dipawali</md-tab-label>
+        <md-tab-body>
+          <img src="img/offers/top-deal.jpg" style="width: 100%;height: 100%;">
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Karwachouth</md-tab-label>
+        <md-tab-body>
+          <img src="img/offers/karwachouth.jpg" style="width: 100%;height: 100%;">
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Savings Bazzar</md-tab-label>
+        <md-tab-body>
+          <img src="img/offers/saving-bazzar.jpg" style="width: 100%;height: 100%;">
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>Spacewood</md-tab-label>
+        <md-tab-body>
+          <img src="img/offers/spacewood.jpg" style="width: 100%;height: 100%;">
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+	        </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-md-12">
+              <md-content class="md-padding">
+                <h2 style="color: rgb(63,81,181);">FEATURED DEALS</h2><hr>
+                <div class="row">
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/top-deal.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/sports.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/karwachouth.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/spacewood.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                </div>
+              </md-content>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-12">
+              <md-content class="md-padding">
+                <h2 style="color: rgb(63,81,181);">FOOTWEAR STORE</h2><hr>
+                <div class="row">
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/top-deal.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/sports.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/karwachouth.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/spacewood.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                </div>
+              </md-content>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-12">
+              <md-content class="md-padding">
+                <h2 style="color: rgb(63,81,181);">HOME & KITCHEN STORE</h2><hr>
+                <div class="row">
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/top-deal.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/sports.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/karwachouth.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/spacewood.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                </div>
+              </md-content>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-12">
+              <md-content class="md-padding">
+                <h2 style="color: rgb(63,81,181);">RECENTLY VIEWED</h2><hr>
+                <div class="row">
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/top-deal.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/sports.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/karwachouth.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                    <div class="col-md-3 box-border">
+                        <img src="img/offers/spacewood.jpg" style="height:300px;width:100%;"><hr>
+                        Dell Inspiron 5500 Series<br>
+                        <b>Rs 71000</b> <span>Rs 82500</span> <span class="label label-warning">14%</span>
+                    </div>
+                </div>
+              </md-content>
+          </div>
+        </div><br><br>
+
+        
+         </div>

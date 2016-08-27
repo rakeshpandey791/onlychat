@@ -1,0 +1,50 @@
+<website-header></website-header>
+<div class="ps-relative">
+<div class="container-top-background"></div>
+<div class="container">
+<div class="row" style="padding-top:10%;">
+	  	<div class="col-md-3">&nbsp;</div>
+	    <div class="col-md-6">
+	    	<div style="border:1px solid rgb(244,67,54);">
+	    	<md-toolbar class="md-warn">
+			    <div class="md-toolbar-tools">
+			      <h2 class="md-flex">Login</h2>
+			    </div>
+			  </md-toolbar>
+			  <md-content flex layout-padding>
+			    
+	                <div class="form-group">
+	                	<md-input-container flex>
+				          <label>Enter Email</label>
+				          <input type="text" ng-model="user.email">
+				        </md-input-container>
+	                </div>
+	                <div class="form-group">
+	                    <md-input-container flex>
+				          <label>Enter Password</label>
+				          <input type="password" ng-model="user.password">
+				        </md-input-container>
+	                </div>
+	                <div class="form-group">
+	                    <md-checkbox ng-model="user.rem_me" class="md-primary" aria-label="Checkbox 1">
+				          Remember me
+				        </md-checkbox>
+	                </div>
+	                <div class="form-group" style="padding-right:1%;">
+	                    <md-button class="md-raised md-primary btn-block" ng-click="UserLogin()">
+	                    <i class="fa fa-spinner fa-pulse" ng-if="logginRequest"></i><span ng-if="!logginRequest">Login</span><span ng-if="logginRequest">Logging In...</span>
+	                    </md-button> <br>
+	                    <md-button class="md-raised md-primary" ng-click="LoginWithFB();lodingicon=true;"><i class="fa fa-spinner fa-spin" ng-init="lodingicon=false" ng-if="lodingicon"></i> <i class="fa fa-facebook-official"></i> Login</md-button>
+	                </div>
+	                <div class="form-group" style="padding-right:1%;">
+	                    New to application? <a ui-sref="Signup">Signup</a>
+	                </div>
+	            	
+	            	
+			  </md-content>
+			  </div>
+	        </div>
+	        <div class="col-md-3">&nbsp;</div>
+        </div>
+        </div>
+        </div>

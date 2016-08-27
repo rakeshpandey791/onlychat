@@ -1,0 +1,92 @@
+<website-header></website-header>
+<div class="ps-relative">
+<div class="container-top-background"></div>
+<div class="container">
+<div class="row" style="padding-top:10%;">
+	  	<div class="col-md-12">
+	    	<md-content class="md-padding">
+	    		<div class="row">
+	    			<div class="col-md-3">
+	    				<h3>Groups</h3>
+	    			</div>
+	    			<div class="col-md-9">
+	    				<md-button class="md-raised md-primary pull-right" ng-click="createNewGroup=!createNewGroup">Create New Group</md-button>
+	    			</div>
+	    		</div><hr class="custom-hr">
+
+	    		<div class="row" ng-if="createNewGroup">
+	    			<div class="col-md-3">
+	    				<md-input-container>
+					      <label>Enter Group Name</label>
+					      <input type="text" ng-model="group.name">
+					    </md-input-container>
+	    			</div>
+	    			
+	    			<div class="col-md-3">
+	    				<md-input-container>
+					      <label>Enter Group Description</label>
+					      <input type="text" ng-model="group.description">
+					    </md-input-container>
+	    			</div>
+	    			<div class="col-md-3" style="padding-top: 2%;">
+	    				<md-input-container>
+					      <!-- <input type="file" ng-file-select="fileSelected($files)"> -->
+					    </md-input-container><br>
+					</div>
+	    			<div class="col-md-3" style="padding-top: 1%;">
+	    				<md-button class="md-raised md-warn" ng-click="createGroup(group)">Save</md-button>
+	    			</div>
+	    		</div><hr class="custom-hr" ng-if="createNewGroup">
+	    		<ul class="group-list">
+					<li ng-repeat="group in groupLists" ng-mouseenter="showDeleteIcon=true" ng-mouseleave="showDeleteIcon=false">
+						<time>
+							<span class="day">{{group.created_on | date: 'dd'}}</span>
+							<span class="month">{{group.created_on | date: 'MMM'}}</span>
+						</time>
+						<img alt="Independence Day" src="img/user/{{group.icon?group.icon:'no_icon.png'}}" class="img-circle"/>
+						<div class="info">
+							<h2 class="title">{{group.name}}</h2>
+							<p class="desc">{{group.description?group.description:'No description available.'}}</p>
+						</div>
+						<div class="group-people">
+							<i class="delete-address" ng-if="group.adminUserId==user._id && showDeleteIcon" role="button" tabindex="0" aria-hidden="true" style="margin: -13px 0 0 387px;" ng-click="deleteGroup(group._id)">X</i>
+							<ul>
+								<li style="width:90%;" ng-if="group.adminUserId==user._id">
+									<div class="row">
+										<div class="col-md-8">
+											<md-input-container>
+										        <md-select ng-model="GroupUserToAdd"  placeholder="Add People in group">
+										          <md-option ng-repeat="chatUser in chatUserList" value="{{chatUser._id}}">
+										           <img src="img/user/{{chatUser.icon?chatUser.icon:'rakesh.jpg'}}" class="img-circle" style="width:40px;"> {{chatUser.name}}
+										          </md-option>
+										        </md-select>
+										      </md-input-container>
+										
+										</div>
+										<div class="col-md-4" style="padding-top: 2%;">
+											 <md-button class="md-raised md-warn" ng-click="addPeopleInGroup(GroupUserToAdd,group._id)">Add</md-button>
+										</div>
+									</div>
+								</li>
+								<li style="width:90%;">
+									<span class="text-success">People Already Added:</span> 
+									<a href="" group-id="{{group._id}}" ng-click="showGroupPeople($event,group._id)">
+										<md-tooltip md-direction="top">
+									        Click to see list
+									    </md-tooltip>
+									      <span ng-init="getGroupPeopleCount($index,group._id)">{{group.count}}</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+				</ul>
+
+
+			</md-content>
+	    </div>
+	        
+        </div>
+         </div>
+         </div>

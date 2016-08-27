@@ -1,0 +1,67 @@
+<website-header></website-header>
+<div class="ps-relative">
+<div class="container-top-background"></div>
+<div class="container">
+<div class="row" style="padding-top:10%;">
+	  	<div class="col-md-3">&nbsp;</div>
+	    <div class="col-md-6">
+	    	<div style="border:1px solid rgb(244,67,54);">
+	    	<md-toolbar class="md-warn">
+			    <div class="md-toolbar-tools">
+			      <h2 class="md-flex">Sign Up</h2>
+			    </div>
+			  </md-toolbar>
+			  <md-content flex layout-padding>
+			   
+			    	<div class="form-group">
+	                	<md-input-container flex>
+				          <label>Enter Name</label>
+				          <input type="text" ng-model="user.name">
+				        </md-input-container>
+	                </div>
+	                <div class="form-group">
+	                	<md-input-container flex>
+				          <label>Enter Email</label>
+				          <input type="text" ng-model="user.email">
+				        </md-input-container>
+	                </div>
+	                <div class="form-group">
+	                	<md-input-container flex>
+				          <label>Enter Mobile No.</label>
+				          <input type="text" ng-model="user.mobile">
+				        </md-input-container>
+	                </div>
+	                <div class="form-group">
+	                    <md-input-container flex>
+				          <label>Enter Password</label>
+				          <input type="password" ng-model="user.password">
+				        </md-input-container>
+	                </div>
+	                <div class="form-group">
+	                    <md-input-container flex>
+				          <label>Confirm Password</label>
+				          <input type="password" ng-model="user.cofpassword">
+				        </md-input-container>
+	                </div>
+	                <div class="form-group">
+	                    <md-checkbox ng-model="user.tnc" class="md-primary" aria-label="Checkbox 1">
+				          Accept Terms & conditions
+				        </md-checkbox>
+				        <a href="javascript:void(0)" ng-click="showTermAndCondition($event)">view our term and condition</a>
+	                </div>
+	                <div class="form-group" style="padding-right:1%;">
+	                    <md-button class="md-raised md-primary btn-block" ng-click="createNewUser()">
+	                    <i class="fa fa-spinner fa-pulse" ng-if="signupRequest"></i><span ng-if="!signupRequest">Save</span><span ng-if="signupRequest">Registering...</span>
+	                    </md-button>
+	                </div>
+	                <div class="form-group" style="padding-right:1%;">
+	                    Heve already account? <a ui-sref="Login">Login</a>
+	                </div>
+	            
+			  </md-content>
+			  </div>
+	        </div>
+	        <div class="col-md-3">&nbsp;</div>
+        </div>
+        </div>
+        </div>

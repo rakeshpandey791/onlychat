@@ -1,0 +1,9 @@
+<div ng-if="user._id!==userId" class="user-name" ng-init="getUserName(userId)">{{messageUserName}}</div>
+	<img ng-if="user._id!==userId" src="img/user/{{messageIcon?messageIcon:'no_icon.png'}}" class="img-circle" style="width: 40px;">
+	<span ng-class="{'right':user._id==userId,'left':user._id!=userId}">
+	<md-tooltip md-direction="{{user._id==userId?'left':'left'}}">
+        {{createdOn | date: "MMM d, y h:mm:ss a"}}
+      </md-tooltip>
+	{{message}}
+	</span>
+<div class="clear"></div>
